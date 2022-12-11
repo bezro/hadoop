@@ -13,20 +13,16 @@ $M$ - число мапперов
 $R$ - число редьюсеров
 
 ## До работы
-Файл `data/input/ratings.csv` содержит информацию об оценках пользователями фильмов и имеет структуру: $$u_1, i_1, r_{u_1i_1}, timestamp_1 $$ $$u_2, i_2, r_{u_2i_2}, timestamp_2 \newline ... \newline u_N, i_N, r_{u_Ni_N}, timestamp_N$$
+Файл `data/input/ratings.csv` содержит информацию об оценках пользователями фильмов и имеет структуру: $$u_1, i_1, r_{u_1i_1}, timestamp_1$$ $$u_2, i_2, r_{u_2i_2}, timestamp_2$$ $$...$$ $$u_N, i_N, r_{u_Ni_N}, timestamp_N$$
 
-Файл `data/input/movies.csv` содержит информацию о фильмах и имеет структуру:
-$$i_1, title_1, genre_1 \\
-i_2, title_2, genre_2 \\
-... \\
-i_M, title_M, genre_M$$
+Файл `data/input/movies.csv` содержит информацию о фильмах и имеет структуру: $$i_1, title_1, genre_1$$ $$i_2, title_2, genre_2$$ $$...$$ $$i_M, title_M, genre_M$$
 
 ## Первый этап
 **mapper_1.py**
 
 Не выполняет никаких вычислений, а преобразовывает запись строки.
 
-`data/input/ratings.csv` $\rightarrow$ mapper\_1.py $\rightarrow$ $$u_1 \quad i_1, r_{u_1i_1} \\ u_2 \quad i_2, r_{u_2i_2} \\ ... \\ u_n \quad i_n, r_{u_ni_n}$$
+`data/input/ratings.csv` $\rightarrow$ mapper\_1.py $\rightarrow$ $$u_1 \quad i_1, r_{u_1i_1}$$ $$u_2 \quad i_2, r_{u_2i_2}$$ $$...$$ $$u_n \quad i_n, r_{u_ni_n}$$
 
 Сложность по времени одного маппера - $$O(\frac{UI\alpha}{M})$$ - поскольку все мапперы обрабатывают суммарно $UI\alpha$ строк - троек чисел.
 
@@ -38,14 +34,7 @@ i_M, title_M, genre_M$$
 Для каждого фильма, оценённого пользователем, вычисляет разность оценки фильма и средней оценки пользователя ($dr$).  
 Для каждой пары фильмов ($i_1, i_2$), оценённых одним пользователем, записывает $dr_1dr_2, dr_1^2, dr_2^2$
 
-$$u_1 \quad i_{11}, r_{11} \\
-... \\ 
-u_1 \quad i_{1s_1}, r_{1s_1} \\ 
-... \\ 
-... \\ 
-u_n \quad i_{n1}, r_{n1} \\
-... \\ 
-u_n \quad i_{ns_n}, r_{ns_n} \\$$ 
+$$u_1 \quad i_{11}, r_{11}$$ $$...$$ $$u_1 \quad i_{1s_1}, r_{1s_1}$$ $$...$$ $$...$$ $$u_n \quad i_{n1}, r_{n1}$$ $$...$$ $$u_n \quad i_{ns_n}, r_{ns_n} $$ 
 $\rightarrow$ reducer\_1.py $\rightarrow$
 $$u_1 \quad
 i_{11},i_{11},dr_{11}dr_{11},dr_{11}^2,dr_{11}^2 \; ... \; i_{11},i_{1s_1},dr_{11}dr_{1s_1},dr_{11}^2,dr_{1s_1}^2 \;  i_{12},i_{11},dr_{12}dr_{11},dr_{12}^2,dr_{11}^2 \; ... \\
