@@ -13,7 +13,7 @@ $M$ - число мапперов
 $R$ - число редьюсеров
 
 ## До работы
-Файл `data/input/ratings.csv` содержит информацию об оценках пользователями фильмов и имеет структуру: $$u_1, i_1, r_{u_1i_1}, timestamp_1 \newline u_2, i_2, r_{u_2i_2}, timestamp_2 \newline ... \newline u_N, i_N, r_{u_Ni_N}, timestamp_N$$
+Файл `data/input/ratings.csv` содержит информацию об оценках пользователями фильмов и имеет структуру: $$u_1, i_1, r_{u_1i_1}, timestamp_1 $$ $$ u_2, i_2, r_{u_2i_2}, timestamp_2 \newline ... \newline u_N, i_N, r_{u_Ni_N}, timestamp_N$$
 
 Файл `data/input/movies.csv` содержит информацию о фильмах и имеет структуру:
 $$i_1, title_1, genre_1 \\
