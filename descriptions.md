@@ -17,13 +17,13 @@ $R$ - число редьюсеров
 $$u_1, i_1, r_{u_1i_1}, timestamp_1 \\
 u_2, i_2, r_{u_2i_2}, timestamp_2 \\
 ... \\
-u_N, i_N, r_{u_Ni_N}, timestamp_N $$
+u_N, i_N, r_{u_Ni_N}, timestamp_N$$
 
 Файл `data/input/movies.csv` содержит информацию о фильмах и имеет структуру:
 $$i_1, title_1, genre_1 \\
 i_2, title_2, genre_2 \\
 ... \\
-i_M, title_M, genre_M $$
+i_M, title_M, genre_M$$
 
 ## Первый этап
 **mapper_1.py**
